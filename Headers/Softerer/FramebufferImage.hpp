@@ -7,7 +7,14 @@ namespace Softerer
 	class FramebufferImage : public Image
 	{
 	public:
-		FramebufferImage(Pixel* data, size_t width, size_t height);
-		virtual ~FramebufferImage() = 0;
+		FramebufferImage(size_t width, size_t height);
+		~FramebufferImage();
+		FramebufferImage(FramebufferImage&& other);
+
+		const void* GetBitmapRendererHandle() const;
+		const void* GetInternalHandle() const;
+	private:
+		void* m_BitmapRendererHandle = nullptr;
+		void* m_InternalHandle = nullptr;
 	};
 }

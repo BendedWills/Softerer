@@ -15,13 +15,15 @@ namespace Softerer
 			uint8_t a;
 		};
 
-		Image(Pixel* data, size_t width, size_t height);
+		Image(size_t width, size_t height);
+		virtual ~Image() = 0;
 
 		Pixel* GetData() const;
 		const size_t GetWidth() const;
 		const size_t GetHeight() const;
+	protected:
+		Pixel* m_ImageData = nullptr;
 	private:
-		Pixel* m_Data = nullptr;
 		size_t m_Width = 0;
 		size_t m_Height = 0;
 	};

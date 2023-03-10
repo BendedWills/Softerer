@@ -11,7 +11,6 @@ namespace Softerer
 	public:
 		virtual ~Surface() = 0;
 
-		virtual Scope<FramebufferImage> CreateFramebufferImage(size_t width, size_t height) = 0;
 		virtual void Present(const FramebufferImage& framebuffer) = 0;
 	};
 }

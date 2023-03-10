@@ -1,20 +1,18 @@
 #include <Softerer/Image.hpp>
-#include <cassert>
-
 namespace Softerer
 {
-	Image::Image(Pixel* data, size_t width, size_t height)
+	Image::Image(size_t width, size_t height)
 		:
-		m_Data(data),
 		m_Width(width),
 		m_Height(height)
-	{
-		assert(data != nullptr);
-	}
+	{}
+
+	Image::~Image()
+	{}
 
 	Image::Pixel* Image::GetData() const
 	{
-		return m_Data;
+		return m_ImageData;
 	}
 
 	const size_t Image::GetWidth() const
@@ -26,5 +24,4 @@ namespace Softerer
 	{
 		return m_Height;
 	}
-
 }

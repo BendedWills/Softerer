@@ -7,7 +7,7 @@ set (CMAKE_CXX_STANDARD 20)
 add_subdirectory(Vendor/Tether)
 add_subdirectory(Applications)
 
-add_library(${PROJECT_NAME} STATIC "Source/Surface.cpp" "Source/Image.cpp" "Source/Platform/Win32Surface.cpp" "Source/FramebufferImage.cpp")
+add_library(${PROJECT_NAME} STATIC "Source/Surface.cpp" "Source/Image.cpp" "Source/Platform/Win32Surface.cpp" "Source/Platform/Win32_FramebufferImage.cpp" "Source/Context.cpp" "Source/Queue.cpp"  "Source/Semaphore.cpp")
 
 target_include_directories(${PROJECT_NAME}
 PUBLIC
